@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter,Link } from "react-router-dom";
 import { loginUser } from "../../Redux/_actions/userActions";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form,  Input, Button, Checkbox, Typography } from 'antd';
 import { useDispatch } from "react-redux";
-import { LockOutlined, IdcardOutlined  } from '@ant-design/icons';
+import { LockOutlined, IdcardOutlined,} from '@ant-design/icons';
 
 
 const { Title } = Typography;
@@ -83,7 +83,7 @@ function LoginPage(props) {
         return (
           <div className="app">
 
-            <Title level={2}>Log In</Title>
+            <Title level={2}>Sign In</Title>
             <form onSubmit={handleSubmit} style={{ width: '350px' }}>
 
               <Form.Item required>
@@ -127,16 +127,14 @@ function LoginPage(props) {
               )}
 
               <Form.Item>
-                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox>
-                <a className="login-form-forgot" href="/reset_user" style={{ float: 'right' }}>
-                  forgot password
-                  </a>
+                {/* <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox> */}
+               
                 <div>
                   <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit}>
-                    Log in
+                    Sign In
                 </Button>
                 </div>
-                Or <a href="/register">register now!</a>
+                Don't Have An Account? <Link to="/register">Register Now</Link>
               </Form.Item>
             </form>
           </div>

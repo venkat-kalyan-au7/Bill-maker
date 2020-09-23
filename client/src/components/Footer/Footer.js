@@ -1,15 +1,12 @@
 import React from 'react'
 // import {Icon} from 'antd';
-import { SmileOutlined  } from '@ant-design/icons';
+import { CopyrightCircleFilled } from '@ant-design/icons';
 
+import './Footer.css'
 function Footer() {
     return (
-        <div style={{
-            height: '80px', display: 'flex',
-            flexDirection: 'column', alignItems: 'center',
-            justifyContent: 'center', fontSize:'1rem'
-        }}>
-           <p> Happy Coding  <SmileOutlined /></p>
+        <div className='footer'>
+           <p>  BILL DESK <CopyrightCircleFilled /> @2020</p>
         </div>
     )
 }

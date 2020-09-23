@@ -7,7 +7,7 @@ import './LandingPage.css';
 
 
 function Welcome() {
-    return <h1>Hello</h1>;
+    return <h1>THIS IS A HOME PAGE </h1>;
   }
 
 export default Welcome
