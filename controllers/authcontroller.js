@@ -53,6 +53,8 @@ exports.authenticated=(req, res) => {
     });
 }
 
+
+
 exports.logout=(req, res) => {
     User.findOneAndUpdate({ _id: req.user._id }, { token: "", tokenExp: "" }, (err, doc) => {
         if (err) return res.json({ success: false, err });
