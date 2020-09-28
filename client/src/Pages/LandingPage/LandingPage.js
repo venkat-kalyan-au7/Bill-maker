@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import { Input } from 'antd';
 import './LandingPage.css';
 import Axios from 'axios';
+import SearchItems from './Search';
+
+const { Search } = Input;
 
 function LandingPage() {
     const [Products, setProducts] = useState([]);
-  
+    const [SearchTerm, setSearchTerm] = useState('')
 
     const getProducts = (payload)=>{
         Axios.post('/api/product/getProducts', payload)
@@ -21,7 +25,13 @@ function LandingPage() {
         getProducts()
     }, [])
 
-   
+    const handleSearch = (searchTerm)=>{
+        setSearchTerm(searchTerm);
+        let payload = {
+            searchTerm 
+        }
+        getProducts(payload);
+    }
 
     console.log(Products);
     const RenderItems = Products.length > 0 && Products.map((product, index)=>(
@@ -35,7 +45,9 @@ function LandingPage() {
     ));
     return (
         <div style={{maxWidth: '85%', margin: '2rem auto'}}>
-          
+            <SearchItems
+                getSearchterm = {handleSearch}
+            />
             <table>
                 <thead>
                     <tr>
