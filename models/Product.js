@@ -2,10 +2,7 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema;
 
 const productSchema = mongoose.Schema({
-    writer: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    },
+  
     productName: {
         type: String,
         maxlength:50,

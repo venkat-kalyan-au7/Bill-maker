@@ -40,7 +40,7 @@ function LandingPage() {
             <td>{product.productName}</td>
             <td>{product.totalQty}</td>
             <td>{product.availableQty}</td>
-            <td>Rs {product.price}</td>
+            <td>₹ {product.price}</td>
         </tr>
     ));
     return (
