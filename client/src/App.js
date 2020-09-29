@@ -9,6 +9,7 @@ import RegisterPage from "./Pages/RegisterPage/RegisterPage.js";
 import NavBar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer"
 import AddProduct from "./Pages/Add ProductPage/AddProduct"
+import AddCustomer from "./Pages/Add Customer/AddCustomer"
 
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/addproduct" component={Auth(AddProduct, true)} />
+          <Route exact path="/addcustomer" component={Auth(AddCustomer, true)}/>
          
         </Switch>
       </div>
