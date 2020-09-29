@@ -4,7 +4,7 @@ const router = express.Router()
 
 import {auth} from "../middleware/auth"
 
-import {addCustomer,getCustomer} from "../controllers/customerController"
+import {addCustomer,getCustomer} from "../controllers/customercontroller"
 
 router.post('/addCustomer',auth,addCustomer)
 
