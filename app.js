@@ -7,6 +7,7 @@ import path from "path"
 import userRoutes from "./routes/authRoutes"
 import productRoutes from "./routes/productRoutes"
 import customerRoutes from "./routes/customerRoutes"
+import transactionRoutes from "./routes/transactionRoutes"
 
 
 
@@ -26,8 +27,9 @@ app.use('/uploads', express.static('uploads'));
 
 
 app.use("/api/users",userRoutes)
-app.use("/api/product",productRoutes);
-app.use("/api/customer",customerRoutes);
+app.use("/api/product",productRoutes)
+app.use("/api/customer",customerRoutes)
+app.use("/api/transaction",transactionRoutes)
 
 
 
