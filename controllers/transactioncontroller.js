@@ -101,3 +101,17 @@ exports.allTransactions=(req,res)=>{
 
     });
 }
+
+exports.generatePdf=(req,res)=>{
+    pdf.create(pdfTemplate(req.body), {}).toFile('report.pdf', (err)=>{
+        if(err){
+            return res.send(Promise.reject())
+        }
+
+        res.send(Promise.resolve())
+    })  
+}
+
+exports.fetchPdf =(req,res)=>{
+    res.sendFile(path.join(__dirname + '../report.pdf'))
+}
