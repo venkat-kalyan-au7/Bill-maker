@@ -7,7 +7,9 @@ import {auth} from "../middleware/auth"
 import {newBill,
     transactionById,
     refund,
-    allTransactions} from "../controllers/transactioncontroller"
+    allTransactions,
+    generatePdf,
+    fetchPdf} from "../controllers/transactioncontroller"
 
 router.post('/createTransaction',auth,newBill)
 
@@ -17,4 +19,7 @@ router.post('/refundTransaction',auth,refund)
 
 router.get('/getTransactionList',auth,allTransactions)
 
+router.post('/createPdf',auth,generatePdf)
+
+router.get('/fetchPdf',auth,fetchPdf)
 module.exports = router
