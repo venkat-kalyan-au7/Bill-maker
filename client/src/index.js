@@ -3,11 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-// import Reducer from './Redux/_reducers/index';
 import { Provider } from 'react-redux';
-// import { createStore, applyMiddleware } from 'redux';
-// import promiseMiddleware from 'redux-promise';
-// import ReduxThunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import store from "./Redux/store/store"
 

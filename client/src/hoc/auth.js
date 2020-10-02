@@ -15,16 +15,14 @@ export default function (ComposedClass, reload, adminRoute = null) {
                     if (reload) {
                         props.history.push('/login')
                     }
-                } else {
-                    if (adminRoute && !response.payload.isAdmin) {
-                        props.history.push('/')
-                    }
+                }
+
                     else {
                         if (reload === false) {
                             props.history.push('/')
                         }
                     }
-                }
+                
             })
             
         }, [])
