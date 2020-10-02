@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer"
 import AddProduct from "./Pages/Add ProductPage/AddProduct"
 import AddCustomer from "./Pages/Add Customer/AddCustomer"
 import Bill from "./Pages/BillingPage/Bill"
+import Pdf from "./Pages/BillingPage/Pdf"
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/addproduct" component={Auth(AddProduct, true)} />
           <Route exact path="/addcustomer" component={Auth(AddCustomer, true)}/>
           <Route exact path="/bill" component={Auth(Bill, true)} />
+          <Route exact path="/transaction/:transactionId" component={Auth(Pdf, true)} />
          
         </Switch>
       </div>

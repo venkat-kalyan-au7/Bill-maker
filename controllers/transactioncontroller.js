@@ -5,7 +5,7 @@ import {Product} from "../models/Product"
 
 import pdfTemplate from "../Pdf/index"
 import pdf from "html-pdf"
-import path from "path"
+
 
 exports.newBill =(req,res)=>{
     const newTransaction = new Transaction(req.body);
@@ -105,13 +105,15 @@ exports.allTransactions=(req,res)=>{
 exports.generatePdf=(req,res)=>{
     pdf.create(pdfTemplate(req.body), {}).toFile('report.pdf', (err)=>{
         if(err){
+            console.log(err)
             return res.send(Promise.reject())
+           
         }
 
-        res.send(Promise.resolve())
+        res.json({
+            success:true
+        })
     })  
 }
 
-exports.fetchPdf =(req,res)=>{
-    res.sendFile(path.join(__dirname + '../report.pdf'))
-}
+

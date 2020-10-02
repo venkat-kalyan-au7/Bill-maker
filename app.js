@@ -24,6 +24,7 @@ app.use(cookie())
 
 
 app.use('/uploads', express.static('uploads'));
+app.use('*',express.static('Pdf'))
 
 
 app.use("/api/users",userRoutes)

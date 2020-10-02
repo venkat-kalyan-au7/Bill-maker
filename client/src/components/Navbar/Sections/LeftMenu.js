@@ -10,11 +10,11 @@ function LeftMenu(props) {
     </Menu.Item>
     
     <Menu.Item key="customer">
-      <Link to="/addcustomer">New Customer</Link>
+      <Link to="/addcustomer">NewCustomer</Link>
     </Menu.Item>
 
-    <Menu.Item key="customer">
-      <Link to="/bill">New Bill</Link>
+    <Menu.Item key="bill">
+      <Link to="/bill">NewBill</Link>
     </Menu.Item>
 
    
