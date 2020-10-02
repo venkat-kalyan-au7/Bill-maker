@@ -8,7 +8,7 @@ import { setTransaction } from '../../Redux/_actions/transactionactions'
 
 const { Option } = Select;
 
-function Book(props) {
+function Bill(props) {
     const [fields, setFields] = useState([{
         productName: "",
         quantity: '',
@@ -132,7 +132,7 @@ function Book(props) {
     return (
         <div style={{maxWidth: '750px', margin: '2rem auto'}}>
             <div style={{textAlign: 'center'}}>
-                <h2>Book Your Order</h2>
+                <h2>New Bill</h2>
             </div>
             <div style={{textAlign: 'left', marginBottom: '10px'}}>
                 <Select 
@@ -192,10 +192,10 @@ function Book(props) {
                         onClick={()=>incrementField()}
                     >
                         <PlusOutlined/>
-                        <span>Add Products</span>
+                        <span>Add New Item</span>
                     </div>
                     <div style={{textAlign: "center"}}>
-                        <Button type="primary" onClick={handleSubmit}>Confirm Order</Button>
+                        <Button type="primary" onClick={handleSubmit}>Confirm Bill</Button>
                     </div>
                     
                     
@@ -208,4 +208,4 @@ function Book(props) {
     )
 }
 
-export default Book
+export default Bill

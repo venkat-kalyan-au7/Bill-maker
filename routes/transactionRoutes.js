@@ -1,4 +1,5 @@
 import express from "express"
+import path from "path"
 
 const router = express.Router()
 
@@ -9,7 +10,7 @@ import {newBill,
     refund,
     allTransactions,
     generatePdf,
-    fetchPdf} from "../controllers/transactioncontroller"
+    } from "../controllers/transactioncontroller"
 
 router.post('/createTransaction',auth,newBill)
 
@@ -19,7 +20,13 @@ router.post('/refundTransaction',auth,refund)
 
 router.get('/getTransactionList',auth,allTransactions)
 
-router.post('/createPdf',auth,generatePdf)
+router.post('/createPdf',generatePdf)
 
-router.get('/fetchPdf',auth,fetchPdf)
+
+router.get('/fetchPdf', (req, res)=>{
+    res.sendFile(path.join(__dirname,"../","report.pdf"))
+})
+
+
+
 module.exports = router
