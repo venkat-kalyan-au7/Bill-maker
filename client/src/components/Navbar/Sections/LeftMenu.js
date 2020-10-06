@@ -16,6 +16,15 @@ function LeftMenu(props) {
     <Menu.Item key="bill">
       <Link to="/bill">NewBill</Link>
     </Menu.Item>
+    <Menu.Item key="refund">
+      <Link to="/refund">Refund</Link>
+    </Menu.Item>
+
+    <Menu.Item key="transaction">
+      <Link to="/transaction">Transaction</Link>
+    </Menu.Item>
+
+   
 
    
 
