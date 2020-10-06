@@ -6,7 +6,7 @@ import multer from "multer"
 
 import {addProduct,
         searchProduct,
-        updateAvailability} from "../controllers/productController"
+        updateAvailability,} from "../controllers/productController"
 
 
 import {auth} from "../middleware/auth"

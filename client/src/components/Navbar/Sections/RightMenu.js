@@ -34,7 +34,7 @@ function RightMenu(props) {
       <Menu mode={props.mode}>
 
     <Menu.Item key="product">
-      <Link to="/addproduct">Manage Products</Link>
+      <Link to="/addproduct">New Item</Link>
     </Menu.Item>
         <Menu.Item key="logout">
           <a onClick={logoutHandler}>Logout</a>
