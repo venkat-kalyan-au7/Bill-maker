@@ -26,7 +26,6 @@ app.use(cookie())
 app.use('/uploads', express.static('uploads'));
 
 
-
 app.use("/api/users",userRoutes)
 app.use("/api/product",productRoutes)
 app.use("/api/customer",customerRoutes)

@@ -12,6 +12,13 @@ import AddProduct from "./Pages/Add ProductPage/AddProduct"
 import AddCustomer from "./Pages/Add Customer/AddCustomer"
 import Bill from "./Pages/BillingPage/Bill"
 import Pdf from "./Pages/BillingPage/Pdf"
+import Refund from "./Pages/Refund/TransactionRefund"
+import Refunded from "./Pages/Refund/Refund.js"
+import Transactions from "./Pages/Transactions/TransactionsList"
+
+
+
+
 
 
 
@@ -19,6 +26,7 @@ function App() {
   return (
     <Suspense fallback={(<div>Loading...</div>)}>
       <NavBar />
+    
       <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
         <Switch>
           <Route exact path="/" component={Auth(LandingPage, null)} />
@@ -28,6 +36,9 @@ function App() {
           <Route exact path="/addcustomer" component={Auth(AddCustomer, true)}/>
           <Route exact path="/bill" component={Auth(Bill, true)} />
           <Route exact path="/transaction/:transactionId" component={Auth(Pdf, true)} />
+          <Route exact path="/refund" component={Auth(Refund, true)} />
+          <Route exact path="/transaction/refund/:transactionId" component={Auth(Refunded, true)} />
+          <Route exact path="/transaction" component={Auth(Transactions, true)} />
          
         </Switch>
       </div>
