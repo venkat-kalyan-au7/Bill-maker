@@ -3,6 +3,8 @@ import Dropzone from 'react-dropzone';
 import { PlusOutlined } from '@ant-design/icons';
 import Axios from 'axios';
 
+const API='https://bill-desk-kalyan.herokuapp.com'
+
 
 
 function UploadImage(props) {
