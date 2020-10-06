@@ -3,7 +3,7 @@ import Dropzone from 'react-dropzone';
 import { PlusOutlined } from '@ant-design/icons';
 import Axios from 'axios';
 
-const API = 'http://localhost:5000'
+
 
 function UploadImage(props) {
     const [Images, setImages] = useState([]);
