@@ -3,7 +3,7 @@ import Dropzone from 'react-dropzone';
 import { PlusOutlined } from '@ant-design/icons';
 import Axios from 'axios';
 
-const API = 'http://localhost:5000'
+const API = 'https://bill-desk-kalyan.herokuapp.com'
 
 function UploadImage(props) {
     const [Images, setImages] = useState([]);
