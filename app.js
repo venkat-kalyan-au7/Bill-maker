@@ -3,6 +3,7 @@ import morgan from "morgan"
 import cookie from "cookie-parser"
 import cors from "cors"
 import path from "path"
+import rateLimit from "express-rate-limit"
 //importing routes
 import userRoutes from "./routes/authRoutes"
 import productRoutes from "./routes/productRoutes"
@@ -19,6 +20,13 @@ app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 app.use(cookie())
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100 // limit each IP to 100 requests per windowMs
+  });
+
+app.use(limiter)
 
 
 
