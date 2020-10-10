@@ -87,29 +87,22 @@ TECH STACK USED:
 
 "yup": "^0.28.3"
 
-**Features**
+**Implemented**
 
-●Employee Login and Registration
- ● Necessary Routes are Protected 
- ● Add customers to the database 
- ● Add Products to database
-  ● Image upload 
-  ● product search 
-  ● search for particular transaction 
-  ● Inventory updation after every bill and refund
-   ● Refund for customer 
-● View all products
- ● view all transactions 
- ● Billing for items 
- ● Receipt generation
-  ● Pdf format of bill can be downloaded
-
-
-
-
-
-
-
+ - Employee Login and Registration
+ - Necessary Routes are Protected
+ - Add customers to the database
+ - Add Products to database
+ - Image upload
+ - product search
+ - search for particular transaction
+ - Inventory updation after every bill and refund
+ - Refund for customer
+ - View all products
+ - view all transactions
+ - Billing for items
+ - Receipt generation
+ - Pdf format of bill can be downloaded
 
    
 
