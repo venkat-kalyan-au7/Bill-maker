@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import moment from "moment";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -36,6 +36,7 @@ const tailFormItemLayout = {
 
 function RegisterPage(props) {
   const dispatch = useDispatch();
+  const [formErrorMessage, setFormErrorMessage] = useState('')
   return (
 
     <Formik
@@ -68,20 +69,26 @@ function RegisterPage(props) {
             email: values.email,
             password: values.password,
             name: values.name,
-            lastname: values.lastname,
-            image: `http://gravatar.com/avatar/${moment().unix()}?d=identicon`
+            lastname: values.lastname
           };
 
           dispatch(registerUser(dataToSubmit)).then(response => {
             if (response.payload.success) {
               props.history.push("/login");
             } else {
-              alert(response.payload.err.errmsg)
+              setFormErrorMessage(response.payload.err.message)
+              // console.log(response.payload.err)
+              // alert(response.payload.err.message)
             }
-          })
+          }).catch(response => {
+            setFormErrorMessage()
+            setTimeout(() => {
+              setFormErrorMessage(response.payload.err.message)
+            }, 3000);
+          });
 
           setSubmitting(false);
-        }, 500);
+        }, 500)
       }}
     >
       {props => {
@@ -147,10 +154,27 @@ function RegisterPage(props) {
                     errors.email && touched.email ? 'text-input error' : 'text-input'
                   }
                 />
+                
                 {errors.email && touched.email && (
+                  
                   <div className="input-feedback">{errors.email}</div>
+                  
                 )}
+
+             
               </Form.Item>
+
+
+              
+
+              
+
+              {formErrorMessage && (
+                <label  ><p style={{ color: '#ff0000bf', fontSize: '0.7rem', border: '1px solid', padding: '1rem', borderRadius: '10px' }}>{formErrorMessage}</p></label>
+              )}
+
+             
+              
 
               <Form.Item required label="Password" hasFeedback validateStatus={errors.password && touched.password ? "error" : 'success'}>
                 <Input
