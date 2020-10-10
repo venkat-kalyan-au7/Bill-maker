@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Form, Button, Input } from 'antd';
 import Axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 function AddCustomer() {
+  const [formErrorMessage, setFormErrorMessage] = useState('')
     const layout = {
       labelCol: {
         span: 8,
@@ -24,8 +25,14 @@ function AddCustomer() {
       .then(response => {
         if(response.data.success===true){
           console.log(response.data.success);
-          NotificationManager.success(response.data.msg, 'Success');
+          NotificationManager.success(response.data.msg);
         }
+        else{
+          console.log(response)
+          setFormErrorMessage(response.data.msg)
+
+        }
+        
       })
     };
     
@@ -53,11 +60,15 @@ function AddCustomer() {
               rules={[
                 {
                   type: 'email',
+                  
                 },
               ]}
             >
               <Input />
             </Form.Item>
+            {formErrorMessage && (
+                <label  ><p style={{ color: '#ff0000bf', fontSize: '0.7rem', border: '1px solid', padding: '1rem', borderRadius: '10px' }}>{formErrorMessage}</p></label>
+              )}
             <Form.Item
               name={['phone']}
               label="Contacts nos"
