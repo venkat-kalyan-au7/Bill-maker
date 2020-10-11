@@ -24,6 +24,10 @@ function LeftMenu(props) {
        <Menu.Item key="mail">
       <Link to="/">Home</Link>
     </Menu.Item>
+
+    <Menu.Item key="card">
+      <Link to="/products">Products</Link>
+    </Menu.Item>
       </Menu>
     )
   } else {
@@ -32,6 +36,10 @@ function LeftMenu(props) {
 
     <Menu.Item key="mail">
       <Link to="/">Home</Link>
+    </Menu.Item>
+
+    <Menu.Item key="card">
+      <Link to="/products">Products</Link>
     </Menu.Item>
 
     <Menu.Item key="product">

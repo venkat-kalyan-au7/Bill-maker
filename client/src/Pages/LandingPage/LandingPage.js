@@ -36,7 +36,7 @@ function LandingPage() {
     console.log(Products);
     const RenderItems = Products.length > 0 && Products.map((product, index)=>(
         <tr>
-            <td><img src={product.images[0]} style={{width: '70px', height: '30px'}}/></td>
+            {/* <td><img src={product.images[0]} style={{width: '200px', height: '200px'}}/></td> */}
             <td>{product.productName}</td>
             <td>{product.totalQty}</td>
             <td>{product.availableQty}</td>
@@ -51,7 +51,7 @@ function LandingPage() {
             <table>
                 <thead>
                     <tr>
-                        <th>Image</th>
+                        {/* <th>Image</th> */}
                         <th>Product</th>
                         <th>Total Qty</th>
                         <th>Available Qty</th>
