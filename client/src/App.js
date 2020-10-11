@@ -15,6 +15,7 @@ import Pdf from "./Pages/BillingPage/Pdf"
 import Refund from "./Pages/Refund/TransactionRefund"
 import Refunded from "./Pages/Refund/Refund.js"
 import Transactions from "./Pages/Transactions/TransactionsList"
+import ProductCard from "./Pages/ProductCard/Product"
 
 
 
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/refund" component={Auth(Refund, true)} />
           <Route exact path="/transaction/refund/:transactionId" component={Auth(Refunded, true)} />
           <Route exact path="/transaction" component={Auth(Transactions, true)} />
+          <Route exact path="/products" component={Auth(ProductCard, null)} />
          
         </Switch>
       </div>
